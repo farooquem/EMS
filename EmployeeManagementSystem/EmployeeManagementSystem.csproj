@@ -116,6 +116,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Department.aspx" />
     <Content Include="Employee.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -130,8 +131,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="InOutDetail.aspx" />
+    <Content Include="LeaveDetail.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="payroll.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -183,6 +189,12 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Context\DepartmentContext.cs" />
+    <Compile Include="Context\EmployeeContext.cs" />
+    <Compile Include="Context\InOutDetailsContext.cs" />
+    <Compile Include="Context\LeaveDetailContext.cs" />
+    <Compile Include="Context\PayrollContext.cs" />
+    <Compile Include="Context\UserContext.cs" />
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +209,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee.aspx.cs">
       <DependentUpon>Employee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,9 +223,23 @@
     <Compile Include="Employee.aspx.designer.cs">
       <DependentUpon>Employee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManagementContext.cs" />
+    <Compile Include="Context\EmployeeManagementContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InOutDetail.aspx.cs">
+      <DependentUpon>InOutDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InOutDetail.aspx.designer.cs">
+      <DependentUpon>InOutDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveDetail.aspx.cs">
+      <DependentUpon>LeaveDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeaveDetail.aspx.designer.cs">
+      <DependentUpon>LeaveDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -223,6 +256,20 @@
     <Compile Include="Model\SalarySlip.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payroll.aspx.cs">
+      <DependentUpon>payroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payroll.aspx.designer.cs">
+      <DependentUpon>payroll.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
