@@ -90,23 +90,25 @@
                 </div>
             </div>
     </div>
-    <div class="row pull-right">
-        <%-- <div class="col-sm-6 form-group" style="width: 100%">
-                <asp:DropDownList runat="server" ID="ddlFilter" Height="33px" ></asp:DropDownList>
-                <asp:TextBox runat="server" ID="txtSearch" Height="33px"></asp:TextBox>
-                    <asp:Button runat="server" Text="Search" CssClass="btn btn-primary" ID="btnSearch" OnClick="btnSearch_OnClick" CausesValidation="False" />
-                    </div>--%>
-
-        <div class="col-sm-12 form-group" <%-- style="width: 100%"--%>>
+    
+       
+            <div class="row pull-right">
+        <div class="col-sm-12 form-group" >
             <asp:Button runat="server" Text="New" CssClass="btn btn-primary" ID="btnNew" OnClick="btnNew_OnClick" CausesValidation="False" />
             <asp:Button runat="server" Text="Save" ID="btnSave" CssClass="btn btn-success" OnClick="btnSave_OnClick" />
             <asp:Button runat="server" Text="Reset" ID="btnReset" CssClass="btn btn-primary" OnClick="btnReset_OnClick" OnClientClick="return cleanForm();" CausesValidation="False" />
         </div>
-    </div>
-
+        </div>
     </div>
 
     <div id="grid">
+        <div class="row">
+            <div class="col-sm-12 form-group">
+                <asp:DropDownList runat="server" CssClass="col-sm-2 " ID="ddlFilter" Height="33px" ></asp:DropDownList>&nbsp;&nbsp;
+                <asp:TextBox runat="server" ID="txtSearch" Height="33px"></asp:TextBox>&nbsp;&nbsp;
+                <asp:Button runat="server" Text="Search" CssClass="btn btn-primary" ID="btnSearch" OnClick="btnSearch_OnClick" CausesValidation="False" />
+            </div>
+        </div>
         <asp:GridView CssClass="table table-striped table-bordered table-hover"
             runat="server" ID="gvEmployee" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
             AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display.">

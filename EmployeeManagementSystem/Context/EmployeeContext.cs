@@ -94,12 +94,26 @@ namespace EmployeeManagementSystem.Context
 
 
 
-        public DataTable GetAllEmployee()
+        public DataTable GetAllEmployee(string key, string value)
         {
             var ds = new DataSet();
-            const string query = "select e.Id,EmployeeId, CONCAT(FirstName,' ',MiddleName,' ',LastName) as Name,d.Name as Department," +
+            string query = "select e.Id,EmployeeId, CONCAT(FirstName,' ',MiddleName,' ',LastName) as Name,d.Name as Department," +
                                  "Job_Title,ContactNumber,Email,Address,DateOfBirth,DateOfJoining,DateOfLeaving,Gender, CASE e.IsActive WHEN 1 THEN 'Yes' ELSE 'No' End IsActive  from" +
                                  " Employee e left join Department d on e.DepartmentId = d.Id";
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+
+            }
+            else switch (key)
+            {
+                case "EmployeeId":
+                    query += " where EmployeeId like '%" + value.Trim() + "%'";
+                    break;
+                case "Name":
+                    query += " where FirstName like '%" + value.Trim() + "%' OR MiddleName like '%" + value.Trim() + "%' OR LastName like '%" + value.Trim() + "%'";
+                    break;
+            }
             var con = new SqlConnection(_connectionString);
             var adp = new SqlDataAdapter(query, con);
             con.Open();

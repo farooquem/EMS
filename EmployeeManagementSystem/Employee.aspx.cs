@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -74,7 +75,8 @@ namespace EmployeeManagementSystem
         private void BindData()
         {
             var emp = new EmployeeManagementContext();
-            gvEmployee.DataSource = emp.GetAllEmployee();
+            gvEmployee.DataSource = emp.GetAllEmployee(ddlFilter.SelectedValue, 
+                txtSearch.Text.Replace("'", string.Empty).Replace("`", string.Empty).Replace("-", string.Empty));
             gvEmployee.DataBind();
         }
 
@@ -261,21 +263,22 @@ namespace EmployeeManagementSystem
             dt.Columns.Add("Value", typeof(string));
             dt.Rows.Add("Employee Id", "EmployeeId");
             dt.Rows.Add("Name", "Name");
-            dt.Rows.Add("Department", "Department");
-            dt.Rows.Add("Job Title", "Job_Title");
-                dt.Rows.Add("Contact Number", "ContactNumber");
-            dt.Rows.Add("Email", "Email");
-            dt.Rows.Add("Address", "Address");
-            dt.Rows.Add("Gender", "Gender");
-            //ddlFilter.DataSource = dt;
-            //ddlFilter.DataTextField = "Key";
-            //ddlFilter.DataValueField = "Value";
-            //ddlFilter.DataBind();
+            //dt.Rows.Add("Department", "Department");
+            //dt.Rows.Add("Job Title", "Job_Title");
+            //    dt.Rows.Add("Contact Number", "ContactNumber");
+            //dt.Rows.Add("Email", "Email");
+            //dt.Rows.Add("Address", "Address");
+            //dt.Rows.Add("Gender", "Gender");
+            ddlFilter.DataSource = dt;
+            ddlFilter.DataTextField = "Key";
+            ddlFilter.DataValueField = "Value";
+            ddlFilter.DataBind();
         }
 
         protected void btnSearch_OnClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            BindData();
+           // throw new NotImplementedException();
         }
     }
 
