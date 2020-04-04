@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/EmployeeManagementSystem/v15/Server/sqlite3
+/EmployeeManagementSystem/obj/Debug
+/InOutProcessor/obj/Debug
+/InOutPublisher/obj/Debug
